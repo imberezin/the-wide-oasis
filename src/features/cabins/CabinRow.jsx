@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import styled from "styled-components";
 import { formatCurrency } from "../../utils/helpers";
 
@@ -8,8 +7,8 @@ import { HiSquare2Stack, HiTrash } from "react-icons/hi2";
 import { HiPencil } from "react-icons/hi";
 import { useCreateCabin } from "./useCreateCabin";
 import Modal from "../../ui/Modal";
-import Button from "../../ui/Button";
-import Row from "../../ui/Row";
+// import Button from "../../ui/Button";
+// import Row from "../../ui/Row";
 
 import ConfirmDelete from "../../ui/ConfirmDelete";
 import Table from "../../ui/Table";
@@ -56,7 +55,7 @@ const Discount = styled.div`
 function CabinRow({ cabin }) {
   const { isDeleting, deleteCabin } = useDeleteCabin();
 
-  const { isCreating, createCabin } = useCreateCabin();
+  const { createCabin } = useCreateCabin();
   const {
     id: cabinId,
     name,
@@ -149,49 +148,3 @@ function CabinRow({ cabin }) {
 }
 
 export default CabinRow;
-
-{
-  /* <Row type="horizontal">
-<Button
-  size="small"
-  onClick={() => handleDuplicate()}
-  disabled={isCreating}
->
-  <HiSquare2Stack />
-</Button>
-
-<Modal>
-  <Modal.Open opens="edit">
-    <Button size="small">
-      <HiPencil />
-    </Button>
-  </Modal.Open>
-  <Modal.Window name="edit">
-    <CreateCabinForm cabinToEdit={cabin} />
-  </Modal.Window>
-
-  <Modal.Open opens="delete">
-    <Button size="small" variation="danger">
-      <HiTrash />
-    </Button>
-  </Modal.Open>
-  <Modal.Window name="delete">
-    <ConfirmDelete
-      resourceName="cabins"
-      disabled={isDeleting}
-      onConfirm={() => deleteCabin(cabinId)}
-    />
-  </Modal.Window>
-</Modal>
-{/* <button onClick={() => setShowForm((show) => !show)}>
-  <HiPencil />
-</button> */
-}
-
-{
-  /* <button disabled={isDeleting} onClick={() => deleteCabin(cabinId)}>
-  <HiTrash />
-</button> */
-}
-// </Row>
-//  */}
